@@ -1,26 +1,21 @@
-int nod(int x, int y){
-  int NOD;
-  while(x != 0){
-    if(x > y){
-      x %= y;
-    }
-      else {
-        y %= x;
+#include <stdlib.h>
+int arr(int n, int x[]){
+  int k = 0;
+  for(int i = 0; i < 5; i++){
+    for(int j = i; j < 5; j++ ){
+      if (x[i] < x[j]) {
+        k++;
       }
-  }
-  if(x == 0){
-    NOD = y;
-  }
-  else{
-    NOD = x;
-  }
-  return NOD;
+    }
+    }
+  return k;
 }
-
 int main(){
-  int N, a, b;
-  a = 248;
-  b = 128;
-  N = nod(a, b);
+  int m = 5;
+  int X[m];
+  for(int a = 0; a < m; a++){
+    X[a] = rand() % 100;
+  }
+  int res = arr(m, X);
 return 0;
 }

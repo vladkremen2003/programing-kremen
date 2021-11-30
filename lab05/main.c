@@ -1,10 +1,16 @@
 int main(){
-int a, b, c, d, NOD;
+int a, b, c, nod, d, NOD;
 a = 560;
 b = 420;
 for(a |= 0; a %= b; b %= a)
 c = 2048;
 d = 798;
+if(a == 0){
+	nod = b;
+}
+else{
+	nod = a;
+}
 do{
 if (c >= d){
                 c %= d;
@@ -23,4 +29,3 @@ else{
 }
 return 0;
 }
-

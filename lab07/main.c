@@ -1,7 +1,7 @@
 #include <stdlib.h>
 int arr(int n, int x[]);
 int main(){
-  int m = 10;
+  int m = 3;
   int X[m];
   for(int a = 0; a < m; a++){
     X[a] = rand() % 100;

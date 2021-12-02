@@ -1,31 +1,21 @@
 int main(){
-int a, b, c, nod, d, NOD;
-a = 560;
-b = 420;
-for(a |= 0; a %= b; b %= a)
-c = 2048;
-d = 798;
-if(a == 0){
-	nod = b;
+int number1, number2, NOD;
+number1 = 2048;
+number2 = 798;
+while(number1 != 0){
+	if(number1 > number2){
+		number1 %= number2;
+	}
+	else{
+		number2 %= number1;
+	}
 }
-else{
-	nod = a;
-}
-do{
-if (c >= d){
-                c %= d;
-                }
-        else{
-		 c %= d;
-}
-}
-while(c != 0);
 
-if(c == 0){
-	NOD = d;
+if(number1 == 0){
+	NOD = number2;
 }
 else{
-	NOD = c;
+	NOD = number1;
 }
 return 0;
 }

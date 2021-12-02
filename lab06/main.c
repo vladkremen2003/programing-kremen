@@ -1,15 +1,15 @@
 int main(){
-const int N = 2;
-int A[2][2] = {
+const int kol = 2;
+int mas1[2][2] = {
 	{1, 2},
 	{3, 4}
 };
-int B[N][N];
-	for(int i = 0; i < N; i++){
-		for(int j = 0; j < N; j++){
-			B[i][j] = 0;
-			for(int c = 0; c < N; c++){
-				B[i][j] = B[i][j] + (A[i][c] * A[c][j]);
+int mas2[kol][kol];
+	for(int st = 0; st < kol; st++){
+		for(int str = 0; str < kol; str++){
+			mas2[st][str] = 0;
+			for(int c = 0; c < kol; c++){
+				mas2[st][str] = mas2[st][str] + (mas1[st][c] * mas1[c][str]);
 }
 }
 }

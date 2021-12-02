@@ -16,10 +16,35 @@
 - функція що визначає, скільки серед заданої
 послідовності чисел таких пар, у котрих перше число менше наступного, використовуючи
 функцію з варіативною кількістю аргументів.
+#include <stdlib.h>
+int arr(int n, int x[]);
+int nod(int number1, int number2);
+int lab06(int array[], int p);
+int main(){
+  int m = 7;
+  int X[m];
+  for(int a = 0; a < m; a++){
+    X[a] = rand() % 100;
+  }
+  int res = arr(m, X);
+
+  int NUM1 = 2048;
+  int NUM2 = 788;
+  int res2 = nod(NUM1,NUM2);
+
+  int K = 7;
+  int fir[] = {1, 2, 5, 6, 8, 9, 0};
+  int arr[7] = {0};
+  for(int v = 0; v < K; v++){
+   arr[v] = lab06(fir, K);
+  }
+
+return 0;
+}
 int arr(int n, int x[]){
   int k = 0;
   for(int i = 0; i < n; i++){
-    for(int j = i; j < n; j++ ){
+    for(int j = i; j < n; j++){
       if (x[i] < x[j]) {
         k++;
       }
@@ -27,18 +52,36 @@ int arr(int n, int x[]){
     }
   return k;
 }
-
-- исследование результатов роботов программирования:
-int main(){
-  int m = 10;
-  int X[m];
-  for(int a = 0; a < m; a++){
-    X[a] = rand() % 100;
-  }
-  int res = arr(m, X);
-return 0;
+int nod(int number1, int number2){
+int NOD;
+while(number1 != 0){
+	if(number1 > number2){
+		number1 %= number2;
+	}
+	else{
+		number2 %= number1;
+	}
 }
 
+if(number1 == 0){
+	NOD = number2;
+}
+else{
+	NOD = number1;
+}
+return NOD;
+}
+int lab06(int array[],int p){
+  int B = 0;
+  for(int a = 0; a < p; a++){
+    for(int b = 0; b < p; b++){
+      if(array[a] < array[b]){
+         B = array[b];
+      }
+    }
+  }
+  return B;
+}
    - для підтвердження коректності роботи програми, зупинен відлагодник на строцы с "return 0"
    и введемо команду "print res". Після вводу команди отримали наступне:
 	(lldb) print res
